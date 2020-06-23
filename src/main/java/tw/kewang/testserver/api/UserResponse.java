@@ -1,24 +1,26 @@
 package tw.kewang.testserver.api;
 
 public class UserResponse {
-   private boolean r=false;
-   private String message;
+    private int r;
+    private String m;
 
-    public void setR(boolean r) {
+    public void setR(int r) {
         this.r = r;
     }
 
     public void setMessage(String message) {
-        this.message = message;
+        this.m = message;
     }
 
     public String getMessage() {
-        return message;
+        return m;
     }
-    public boolean getR(){
+
+    public int getR() {
         return r;
     }
-    public void show(){
-        System.out.println("WOWOWO");
+
+    UserResponse() {
+        /*empty*/
     }
 }

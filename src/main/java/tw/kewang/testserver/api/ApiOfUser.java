@@ -4,8 +4,6 @@ import com.google.gson.Gson;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
-import java.util.ArrayList;
-import java.util.List;
 
 @Path("Userdata")
 public class ApiOfUser {
@@ -13,11 +11,16 @@ public class ApiOfUser {
     @POST
     @Path("addUser")
     public Response addUserdata(String data){
-        UserResponse userResponse=new UserResponse();
         Userdata userdata=new Userdata();
         userdata=GSON.fromJson(data,Userdata.class);
-        System.out.println(userdata.getUsername()+"\n"+userdata.getPassword());
-        userResponse.show();
+        UserResponse userResponse=new UserResponse();
+        if(userdata.getUsername().equals("TEST_USER")&&userdata.getPassword().equals("00000000")){
+            userResponse.setR(0);
+            userResponse.setMessage("success");
+        }else {
+            userResponse.setR(1);
+            userResponse.setMessage("failure");
+        }
         return Response.ok().entity(GSON.toJson(userResponse)).build();
     }
 }
