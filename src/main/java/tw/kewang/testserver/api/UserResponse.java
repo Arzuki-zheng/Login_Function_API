@@ -1,6 +1,6 @@
 package tw.kewang.testserver.api;
 
-public class UserResponse {
+public class UserResponse {                                    //set the class of response
     private int r;
     private String m;
 
@@ -20,7 +20,7 @@ public class UserResponse {
         return r;
     }
 
-    UserResponse() {
+    UserResponse() {                                            //Constructor
         /*empty*/
     }
 }

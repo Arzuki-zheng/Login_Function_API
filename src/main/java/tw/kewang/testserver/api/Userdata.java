@@ -1,6 +1,6 @@
 package tw.kewang.testserver.api;
 
-public class Userdata {
+public class Userdata {                                 //define the class of Userdata to store the username and password
 
     private String username;
     private String password;
@@ -21,6 +21,6 @@ public class Userdata {
         return this.password;
     }
 
-    Userdata() {/*empty*/}
+    Userdata() {/*empty*/}                              //Constructor
 
 }
